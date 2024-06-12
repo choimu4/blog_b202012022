@@ -61,6 +61,7 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public int delete(BlogDto dto) {
+        blogRepository.delete(dtoToEntity(dto)); // delete from board where idx = ***;
         return 0;
     }
 }

@@ -38,11 +38,18 @@ public class BlogServiceTest {
     @Test
     public void getBlog() {
         BlogDto dto = BlogDto.builder()
-                .idx((long) 2)
-                .writerIdx((long) 3)
+                .idx((long) 5)
                 .build();
         BlogDto blogdto = blogService.read(dto);
         System.out.println(blogdto.toString());
+    }
+
+    @Test
+    public void deleteBlog(){
+        BlogDto dto = BlogDto.builder()
+                .idx((long)4)
+                .build();
+        blogService.delete(dto);
     }
     BlogEntity dtoToEntity(BlogDto dto) {
         MemberEntity member = MemberEntity.builder()
