@@ -1,4 +1,4 @@
-package idusw.springboot.cmublog.serivce;
+package idusw.springboot.cmublog.service;
 
 import idusw.springboot.cmublog.entity.BlogEntity;
 import idusw.springboot.cmublog.entity.MemberEntity;
@@ -22,21 +22,23 @@ public interface BlogService {
                 .title(dto.getTitle())
                 .content(dto.getContent())
                 .views(dto.getViews())
+                .block(dto.getBlock())
                 .blogger(member)
                 .build();
         return entity;
     }
-    // MemberEntity -> : Controller에서는 Member를 다룸
+
     default BlogDto entityToDto(BlogEntity entity, MemberEntity member) {
         BlogDto dto = BlogDto.builder()
                 .idx(entity.getIdx())
                 .title(entity.getTitle())
                 .views(entity.getViews())
                 .content(entity.getContent())
+                .block(entity.getBlock())
                 .writerIdx(member.getIdx())
                 .writerName(member.getName())
                 .writerEmail(member.getEmail())
-                .regDate((entity.getRegDate()))
+                .regDate(entity.getRegDate())
                 .modDate(entity.getModDate())
                 .build();
         return dto;

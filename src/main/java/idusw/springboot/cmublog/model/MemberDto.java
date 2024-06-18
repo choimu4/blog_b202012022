@@ -1,6 +1,7 @@
 package idusw.springboot.cmublog.model;
 
 
+import idusw.springboot.cmublog.entity.MemberEntity;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -17,12 +18,17 @@ import java.time.LocalDateTime;
  * Define a Member Class
  * @Author egyou
  */
-public class MemberDto { // DTO(Data Transfer Object) or VO(Valuable Object)
+public class MemberDto {
     private Long idx;
     private String id;
-    private String pw;
-    private String name;
     private String email;
-    private LocalDateTime regDate; // <- 게시글 등록일자
+    private String name;
+    private String pw;
+    private String phone;
+    private String address;
+    private LocalDateTime regDate;
     private LocalDateTime modDate;
+
+
+
 }

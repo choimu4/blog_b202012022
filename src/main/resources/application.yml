@@ -33,6 +33,6 @@ server:
       timeout: 600  # 600초 10분임, 기본값 30분
 db:
   url: jdbc:mysql://localhost:3306/blog_b202012022
-  username: root
-  password: cometrue
+  username: b202012022
+  password: chlalsdnr3!
   driver-class-name: com.mysql.cj.jdbc.Driver

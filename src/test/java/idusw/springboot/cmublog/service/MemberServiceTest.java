@@ -57,6 +57,8 @@ public class MemberServiceTest {
                     .pw("cometrue")
                     .name("administrator")
                     .email("admin" + "@induk.ac.kr")
+                    .phone("010-1234-1234")
+                    .address("서울시 중랑구 용마산로 93길 16")
                     .build();
 
         if(memberService.create(dto) > 0)

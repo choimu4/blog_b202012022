@@ -3,8 +3,6 @@ package idusw.springboot.cmublog.service;
 import idusw.springboot.cmublog.entity.BlogEntity;
 import idusw.springboot.cmublog.entity.MemberEntity;
 import idusw.springboot.cmublog.model.BlogDto;
-import idusw.springboot.cmublog.model.MemberDto;
-import idusw.springboot.cmublog.repository.BlogRepository;
 import idusw.springboot.cmublog.serivce.BlogService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,7 @@ public class BlogServiceTest {
     @Test
     public void registerBlog() {
         BlogDto dto = BlogDto.builder()
-                .title("제목5")
+                .title("제목1")
                 .content("더워")
                 .writerIdx(3L)
                 .block("non")

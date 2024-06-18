@@ -84,5 +84,28 @@ public class MemberController {
         else
             return "./errors/error-message";
     }
+    @GetMapping("/edit/{idx}")
+    public String editMemberForm(@PathVariable("idx") Long idx, Model model) {
+        MemberDto dto = memberService.readByIdx(idx);
+        model.addAttribute("memberDto", dto);
+        return "./members/edit";
+    }
 
+    @PostMapping("/edit/{idx}")
+    public String updateMember(@PathVariable("idx") Long idx, @ModelAttribute("memberDto") MemberDto memberDto) {
+        memberDto.setIdx(idx); // URL에서 받은 ID 값을 설정
+        memberService.update(memberDto);
+        return "redirect:/";
+    }
+
+    @GetMapping("/delete/{idx}")
+    public String deleteMember(@PathVariable("idx") Long idx, HttpSession session) {
+        MemberDto memberDto = memberService.readByIdx(idx);
+        if (memberDto != null) {
+            memberService.delete(memberDto);
+            session.invalidate(); // 세션 무효화
+        }
+        return "redirect:/";
+    }
 }
+

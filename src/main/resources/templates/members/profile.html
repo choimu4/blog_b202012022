@@ -105,16 +105,11 @@
 										</li>
 										<li>
 											<span>Phone Number:</span>
-											619-229-0054
-										</li>
-										<li>
-											<span>Country:</span>
-											America
+											[[${dto.phone}]]
 										</li>
 										<li>
 											<span>Address:</span>
-											1807 Holden Street<br />
-											San Diego, CA 92115
+											[[${dto.address}]]
 										</li>
 									</ul>
 								</div>
@@ -885,92 +880,31 @@
 																	Edit Your Personal Setting
 																</h4>
 																<div class="form-group">
-																	<label>Full Name</label>
+																	<label>Name</label>
 																	<input
 																		class="form-control form-control-lg"
 																		type="text"
 																	/>
 																</div>
 																<div class="form-group">
-																	<label>Title</label>
+																	<label>ID</label>
 																	<input
 																		class="form-control form-control-lg"
 																		type="text"
 																	/>
 																</div>
 																<div class="form-group">
-																	<label>Email</label>
+																	<label>PW</label>
 																	<input
 																		class="form-control form-control-lg"
 																		type="email"
 																	/>
 																</div>
 																<div class="form-group">
-																	<label>Date of birth</label>
+																	<label>PW Confirm</label>
 																	<input
-																		class="form-control form-control-lg date-picker"
-																		type="text"
-																	/>
-																</div>
-																<div class="form-group">
-																	<label>Gender</label>
-																	<div class="d-flex">
-																		<div
-																			class="custom-control custom-radio mb-5 mr-20"
-																		>
-																			<input
-																				type="radio"
-																				id="customRadio4"
-																				name="customRadio"
-																				class="custom-control-input"
-																			/>
-																			<label
-																				class="custom-control-label weight-400"
-																				for="customRadio4"
-																				>Male</label
-																			>
-																		</div>
-																		<div
-																			class="custom-control custom-radio mb-5"
-																		>
-																			<input
-																				type="radio"
-																				id="customRadio5"
-																				name="customRadio"
-																				class="custom-control-input"
-																			/>
-																			<label
-																				class="custom-control-label weight-400"
-																				for="customRadio5"
-																				>Female</label
-																			>
-																		</div>
-																	</div>
-																</div>
-																<div class="form-group">
-																	<label>Country</label>
-																	<select
-																		class="selectpicker form-control form-control-lg"
-																		data-style="btn-outline-secondary btn-lg"
-																		title="Not Chosen"
-																	>
-																		<option>United States</option>
-																		<option>India</option>
-																		<option>United Kingdom</option>
-																	</select>
-																</div>
-																<div class="form-group">
-																	<label>State/Province/Region</label>
-																	<input
-																		class="form-control form-control-lg"
-																		type="text"
-																	/>
-																</div>
-																<div class="form-group">
-																	<label>Postal Code</label>
-																	<input
-																		class="form-control form-control-lg"
-																		type="text"
+																			class="form-control form-control-lg"
+																			type="email"
 																	/>
 																</div>
 																<div class="form-group">
@@ -983,20 +917,6 @@
 																<div class="form-group">
 																	<label>Address</label>
 																	<textarea class="form-control"></textarea>
-																</div>
-																<div class="form-group">
-																	<label>Visa Card Number</label>
-																	<input
-																		class="form-control form-control-lg"
-																		type="text"
-																	/>
-																</div>
-																<div class="form-group">
-																	<label>Paypal ID</label>
-																	<input
-																		class="form-control form-control-lg"
-																		type="text"
-																	/>
 																</div>
 																<div class="form-group">
 																	<div
@@ -1020,6 +940,14 @@
 																		type="submit"
 																		class="btn btn-primary"
 																		value="Update Information"
+																	/>
+																</div>
+																<br>
+																<div class="form-group mb-0">
+																	<input
+																			type="submit"
+																			class="btn btn-warning"
+																			value="Delete"
 																	/>
 																</div>
 															</li>
