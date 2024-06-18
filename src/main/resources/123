@@ -1,0 +1,8 @@
+show databases ;
+create database blog_b202012022;
+select * from mysql.user;
+create user 'b202012022' identified by 'chlalsdnr3!';
+grant all privileges on *.* to 'b202012022';
+
+delete from mysql.user where user='b202012022';
+show tables;
