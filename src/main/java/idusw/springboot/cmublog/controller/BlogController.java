@@ -25,8 +25,6 @@ public class BlogController {
                 .idx(idx)
                 .build();
         blogService.delete(dto);
-        session.invalidate();
-        model.addAttribute("attr-name", "attr-value"); // delete에는 크게 필요 없음
         return "redirect:/blogs/";
     }
 
