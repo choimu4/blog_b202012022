@@ -3,7 +3,7 @@ package idusw.springboot.cmublog.service;
 import idusw.springboot.cmublog.entity.BlogEntity;
 import idusw.springboot.cmublog.entity.MemberEntity;
 import idusw.springboot.cmublog.model.BlogDto;
-import idusw.springboot.cmublog.serivce.BlogService;
+import idusw.springboot.cmublog.service.BlogService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
