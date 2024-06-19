@@ -12,35 +12,32 @@ import java.util.Optional;
 @Service
 public class MemberServiceImpl implements MemberService {
     final MemberRepository memberRepository;
+
     public MemberServiceImpl(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
     @Override
     public int create(MemberDto memberDto) {
-        int ret = 0;
         MemberEntity entity = dtoToEntity(memberDto);
         memberRepository.save(entity);
-        ret = 1;
-        return ret;
+        return 1;
     }
 
     @Override
     public MemberDto readByIdx(Long idx) {
-        if(!memberRepository.findByIdx(idx).isEmpty())
-            return entityToDto(memberRepository.findByIdx(idx).get());
-        else
-            return null;
+        Optional<MemberEntity> entityOptional = memberRepository.findByIdx(idx);
+        return entityOptional.map(this::entityToDto).orElse(null);
     }
 
     @Override
     public List<MemberDto> readAll() {
-        List<MemberEntity> list = memberRepository.findAll();
-        List<MemberDto> dtoList = new ArrayList<MemberDto>();
-        for (MemberEntity memberEntity : list) {
-            dtoList.add(entityToDto(memberEntity));
+        List<MemberEntity> entities = memberRepository.findAll();
+        List<MemberDto> dtos = new ArrayList<>();
+        for (MemberEntity entity : entities) {
+            dtos.add(entityToDto(entity));
         }
-        return dtoList;
+        return dtos;
     }
 
     @Override
@@ -73,5 +70,36 @@ public class MemberServiceImpl implements MemberService {
     public MemberDto loginById(MemberDto memberDto) {
         Optional<MemberEntity> memberEntityOptional = memberRepository.findByIdAndPw(memberDto.getId(), memberDto.getPw());
         return memberEntityOptional.map(this::entityToDto).orElse(null);
+    }
+
+    // 검색 메서드 구현
+    @Override
+    public List<MemberDto> findByName(String name) {
+        List<MemberEntity> entities = memberRepository.findByName(name);
+        List<MemberDto> dtos = new ArrayList<>();
+        for (MemberEntity entity : entities) {
+            dtos.add(entityToDto(entity));
+        }
+        return dtos;
+    }
+
+    @Override
+    public List<MemberDto> findByEmail(String email) {
+        List<MemberEntity> entities = memberRepository.findByEmail(email);
+        List<MemberDto> dtos = new ArrayList<>();
+        for (MemberEntity entity : entities) {
+            dtos.add(entityToDto(entity));
+        }
+        return dtos;
+    }
+
+    @Override
+    public List<MemberDto> findByPhone(String phone) {
+        List<MemberEntity> entities = memberRepository.findByPhone(phone);
+        List<MemberDto> dtos = new ArrayList<>();
+        for (MemberEntity entity : entities) {
+            dtos.add(entityToDto(entity));
+        }
+        return dtos;
     }
 }

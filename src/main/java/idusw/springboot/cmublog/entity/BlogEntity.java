@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name="board")
+@Table(name="blog_202012022")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor

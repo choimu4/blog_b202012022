@@ -12,6 +12,11 @@ public interface MemberService {
     int update(MemberDto memberDto);
     int delete(MemberDto memberDto);
 
+    // 검색 메서드 추가
+    List<MemberDto> findByName(String name);
+    List<MemberDto> findByEmail(String email);
+    List<MemberDto> findByPhone(String phone);
+
     MemberDto loginById(MemberDto memberDto); // id / pw 활용
 
     // Conversion
